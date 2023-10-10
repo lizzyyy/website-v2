@@ -20,7 +20,7 @@
     "@mui/icons-material": "^5.14.12",
     "@mui/material": "^5.14.12",
     "babel-plugin-styled-components": "^2.1.4",
-    "canvas": "^2.11.2",
+    "canvas": "file:./src/canvas",
     "gatsby": "^5.12.4",
     "gatsby-plugin-manifest": "^5.12.1",
     "gatsby-plugin-netlify": "^5.1.1",
@@ -36,6 +36,7 @@
   },
   "devDependencies": {
     "webpack": "^5.88.2",
-    "webpack-cli": "^5.1.4"
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^4.15.1"
   }
 }
