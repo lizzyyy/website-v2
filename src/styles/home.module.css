@@ -1,0 +1,355 @@
+@import 'default.module.css';
+
+@font-face {
+    font-family: "Lekton";
+    src: local("Lekton"),
+     url('../static/fonts/Lekton-Bold.woff2') format('woff2'),
+     url('../static/fonts/Lekton-Bold.woff') format('woff'),
+     url("../static/fonts/Lekton-Bold.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+.layout {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    width: 90%;
+    height: 70vh;
+    margin-top: 7vh;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.leftWrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    height: 100%;
+}
+
+.lamp {
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.lampShade {
+    height: 30%;
+    width: 100px;
+    border: 2px solid var(--black);
+    background-color: white;
+}
+
+.lampPole {
+    height: 70%;
+    width: 12px;
+    border: 2px solid var(--black);
+    margin-top: -2px;
+    background-color: white;
+}
+
+.switchWrapper {
+    display: flex;
+    flex-direction: row;
+    align-self: center;
+    margin-left: 30%;
+    position: relative;
+}
+
+.soon {
+    position: absolute;
+    background-color: white;
+    border: 1px solid var(--black);
+    padding: 4px 8px;
+    text-wrap: nowrap;
+    top: 30%;
+    left: -30%;
+    display: none;
+}
+
+.switchWrapper:hover .soon {
+    display: inline-block;
+}
+
+.switchh {
+    height: 50px;
+    width: 30px;
+    padding: 20px 10px;
+    background-color: white;
+    border: 2px solid var(--black);
+}
+
+.switchIcons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 10px;
+    gap: 16px;
+}
+
+.switchIcons img {
+    max-width: 80%;
+}
+
+
+.centerWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    justify-content: space-between;
+}
+
+.windowWrapper {
+    margin: 0 auto;
+    position: relative;
+    width: fit-content;
+    padding: 0 15%;
+}
+
+.window {
+    max-width: 100%;
+}
+
+.cloudWrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    animation: cloud 8s infinite linear;
+}
+
+.clouds {
+    position: absolute;
+    max-width: 15%;
+    filter: brightness(1.05);
+}
+
+@keyframes cloud {
+    0%,
+    100% {
+        left: 2%;
+    }
+
+    50% {
+        left: 13%;
+    }   
+}
+
+.grillsWrapper {
+    position: absolute;
+    top: 8%;
+    left: 15%;
+}
+
+.grills {
+    box-sizing: border-box;
+    object-fit: cover;
+    transition: .5s;
+    object-position: top;
+    padding-bottom: 150px;
+}
+
+.grills:hover {
+    padding: 0;
+}
+
+.tv {
+    position: absolute;
+    width: 380px;
+    bottom: 109px;
+    left: calc(50% - 194px);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.tvScreen {
+    height: 230px;
+    width: 100%;
+    border: 10px solid var(--black);
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    animation: colorShift 5s infinite;
+}
+
+.tvFade {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.colors {
+    position: absolute;
+    top: 20px;
+    left: 110px;
+    height: 150px;
+    width: 150px;
+    background-color: var(--blue);
+    pointer-events: none;
+    mix-blend-mode: lighten;
+    animation: colorShift 2s infinite;
+}
+
+@keyframes colorShift {
+    0%,
+    100% {
+        filter: hue-rotate(0deg)
+    }
+    25% {
+        filter: hue-rotate(70deg)
+    }
+    50% {
+        filter: hue-rotate(140deg)
+    }
+    75% {
+        filter: hue-rotate(210deg)
+    }
+}
+
+.tvScreen img {
+    max-width: 25%;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    transition: ease-out 0.1s;
+    cursor: pointer;
+}
+
+.tvScreen .tvText {
+    font-family: "Lekton";
+    font-size: 20px;
+    align-self: flex-start;
+    padding-left: 40px;
+    padding-right: 40px;
+    color: var(--black);
+}
+
+.tvScreen .playText {
+    transition: ease-out 0.1s;
+    cursor: pointer;
+    align-self: center;
+    font-size: 20px;
+}
+
+.tvScreen img:hover {
+    max-width: 32%;
+}
+
+.tvScreen .playText:hover {
+    font-size: 24px;
+}
+
+.tvStand {
+    border-bottom: 15px solid var(--black);
+    width: 40%;
+}
+
+.table {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    position: relative;
+}
+
+.tableTop {
+    width: 100%;
+    height: 25px;
+    background-color: white;
+    border: 2px solid var(--black);
+}
+
+.tableLegs {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-right: -4px;
+    margin-top: -2px;
+}
+
+.tableLeg {
+    width: 25px;
+    height: 80px;
+    background-color: white;
+    border: 2px solid var(--black);
+}
+
+.rightWrapper {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    position: relative;
+    flex-direction: column;
+}
+
+.shelfWrapper {
+    max-width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.shelfWrapper img {
+    max-width: 100%;
+    margin-bottom: 50vh
+}
+
+.candleWrapper {
+    max-width: 15%;
+    margin-bottom: -9.5vh;
+    margin-right: 20px;
+    position: relative;
+}
+
+.candleWrapper img {
+    max-width: 100%;
+    margin-bottom: 0;
+    margin-left: auto;
+    cursor: pointer;
+}
+
+.flame {
+    position: absolute;
+    height: 12px;
+    width: 12px;
+    border-radius: 50%;
+    background-color: rgb(255, 213, 97);
+    opacity: 0;
+    transition: ease-in 0.2s;
+}
+
+.arrow {
+    position: absolute;
+    top: calc(50% - 50px);
+    right: 0;
+    filter: brightness(1.2);
+    mix-blend-mode: darken;
+}
+
+.arrow img:hover {
+    opacity: 0.8;
+}
+
+.arrow img {
+    height: 100px;
+    cursor: pointer;
+    animation: shift 1s infinite;
+    transition: opacity ease-out 0.1s;
+}
+
+@keyframes shift {
+    0%,
+    100% {
+        transform: translateX(0)
+    }
+    50% {
+        transform: translateX(10px)
+    }
+}

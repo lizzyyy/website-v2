@@ -1,0 +1,87 @@
+@font-face {
+    font-family: "Lekton";
+    src: local("Lekton"),
+     url('../static/fonts/Lekton-Bold.woff2') format('woff2'),
+     url('../static/fonts/Lekton-Bold.woff') format('woff'),
+     url("../static/fonts/Lekton-Bold.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+:root {
+    --white: #F5F5F5;
+    --blue: #CEF3FF;
+    --black: #3B3B3B;
+    --green: #D4E6D8;
+    --pink: #F9B5B7;
+    --grey: #D9D9D9;
+    --yellow: #FFFBD8;
+    --purple-transparent-light: rgba(248, 135, 255, 0.13);
+    --purple-transparent: rgba(248, 135, 255, 0.39);
+    --yellow-transparent-light: rgba(224, 255, 79, 0.07);
+    --yellow-transparent: rgba(224, 255, 79, 0.17);
+    --blue-transparent: rgba(160, 255, 227, 0.13);
+    --red-transparent: rgba(255, 42, 109, 0.19);
+}
+
+body {
+    background-color: var(--white);
+}
+
+h1 {
+    color: var(--black);
+    font-family: "Lekton";
+    font-weight: normal;
+    font-size: 32px;
+}
+
+h2 {
+    color: var(--black);
+    font-family: "Lekton";
+    font-weight: normal;
+    font-size: 24px;
+}
+
+p {
+    color: var(--black);
+    font-family: "Lekton";
+    font-weight: normal;
+    font-size: 16px;
+    margin: 0;
+}
+
+a {
+    color: var(--pink);
+    font-family: "Lekton";
+    font-weight: normal;
+    font-size: 16px;
+    margin: 0;
+    transition: ease-in 0.2s;
+}
+
+a:hover {
+    text-decoration: none;
+    filter: hue-rotate(180deg);
+}
+
+ul {
+    padding-inline-start: 20px;
+}
+
+li {
+    list-style-type: '>';
+    padding-inline-start: 20px;
+}
+
+li:not(:last-child) { 
+    margin-bottom: 12px;
+}
+
+mark {
+    background-color: var(--blue);
+}
+
+li span {
+    background-color: var(--yellow);
+}

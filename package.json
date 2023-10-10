@@ -15,8 +15,25 @@
     "clean": "gatsby clean"
   },
   "dependencies": {
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "@mui/icons-material": "^5.14.12",
+    "@mui/material": "^5.14.12",
+    "babel-plugin-styled-components": "^2.1.4",
     "gatsby": "^5.12.4",
+    "gatsby-plugin-manifest": "^5.12.1",
+    "gatsby-plugin-styled-components": "^6.12.0",
+    "konva": "^9.2.1",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-awesome-reveal": "^4.2.5",
+    "react-dom": "^18.2.0",
+    "react-indiana-drag-scroll": "^2.2.0",
+    "react-konva": "^18.2.10",
+    "react-typing-effect": "^2.0.5",
+    "styled-components": "^6.0.8"
+  },
+  "devDependencies": {
+    "webpack": "^5.88.2",
+    "webpack-cli": "^5.1.4"
   }
 }

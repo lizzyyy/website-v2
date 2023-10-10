@@ -1,0 +1,155 @@
+@import 'default.module.css';
+
+@font-face {
+    font-family: "Lekton";
+    src: local("Lekton"),
+     url('../static/fonts/Lekton-Bold.woff2') format('woff2'),
+     url('../static/fonts/Lekton-Bold.woff') format('woff'),
+     url("../static/fonts/Lekton-Bold.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+.layout {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    width: 90%;
+    height: 80vh;
+    margin-top: 7vh;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.leftWrapper {
+    display: flex;
+    gap: 20px;
+    overflow: hidden;
+    padding: 2%;
+    overflow: hidden;
+}
+
+.leftWrapper img {
+    border: 8px solid white;
+    outline: 2px solid transparent;
+    opacity: 0.9;
+    background-color: white;
+    transition: ease 0.4s;
+}
+
+.leftWrapper img:hover {
+    outline: 2px solid var(--grey);
+    zoom: 1.05;
+    opacity: 1;
+}
+
+.leftImgs {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: flex-end;
+}
+
+.img1 img {
+    height: 32vh;
+}
+
+.img2 img {
+    height: 22vh;
+}
+
+.img3 {
+    margin-top: 10vh;
+}
+
+.img3 img {
+    height: 40vh;
+}
+
+.rightWrapper {
+    margin-left: 5%;
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+    margin-bottom: 7vh;
+
+    -ms-overflow-style: none; 
+    scrollbar-width: none;
+}
+
+.rightWrapper::-webkit-scrollbar {
+    display: none;
+}
+
+.playground {
+    color: var(--pink);
+    filter: brightness(0.2);
+    animation: colorShift 2s infinite;
+}
+
+@keyframes colorShift {
+    0%,
+    100% {
+        filter: hue-rotate(40deg)
+    }
+    25% {
+        filter: hue-rotate(90deg)
+    }
+    50% {
+        filter: hue-rotate(140deg)
+    }
+    75% {
+        filter: hue-rotate(230deg)
+    }
+}
+
+.item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    transition: border ease-in 0.2s;
+    margin-bottom: 32px;
+}
+
+.item .header {
+    border: 4px solid var(--grey);
+    padding: 8px 60px;
+    cursor: pointer;
+}
+
+.item div {
+    margin: 0 !important;
+    padding: 0;
+}
+
+.item h2 {
+    margin: 0;
+}
+
+.item .content {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    border: 4px solid var(--grey);
+    margin-top: -4px;
+    border-top: none;
+    padding: 8px 32px;
+}
+
+.screw {
+    position: absolute;
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    background-color: var(--grey);
+    transition: ease-in 0.2s;
+    visibility: visible !important;
+}
+
+.item:hover .header {
+    border-color: var(--black);
+}
+
+.item:hover .screw {
+    background-color: var(--black);
+}

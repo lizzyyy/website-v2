@@ -1,0 +1,291 @@
+@import 'default.module.css';
+
+@font-face {
+    font-family: "Lekton";
+    src: local("Lekton"),
+     url('../static/fonts/Lekton-Bold.woff2') format('woff2'),
+     url('../static/fonts/Lekton-Bold.woff') format('woff'),
+     url("../static/fonts/Lekton-Bold.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+.selector {
+    margin: 5vh auto 2vh auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: fit-content;
+}
+
+.selector .wrapper,
+.selector .wrapperActive {
+    display: flex;
+    align-items: center;
+}
+
+.selector .wrapperActive,
+.selector .wrapperActive .active,
+.selector .wrapperActive .triangleActive
+.selector .wrapperActive .triangleActiveR {
+    transition: ease-in 0.2s;
+    cursor: pointer;
+}
+
+.selector .wrapper {
+    cursor: default;
+    pointer-events: none;
+}
+
+.selector .triangle {
+    width: 0; 
+    height: 0; 
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent; 
+    border-right: 12px solid var(--grey); 
+    border-radius: 4px;
+}
+
+.selector .triangleActive,
+.selector .triangleActiveR {
+    width: 0; 
+    height: 0; 
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent; 
+    border-right: 12px solid var(--black); 
+    border-radius: 4px;
+}
+
+.selector:hover .triangleActive {
+    animation: shift 0.7s infinite; 
+}
+
+.selector:hover .triangleActiveR {
+    animation: shift2 0.7s infinite;
+}
+
+@keyframes shift {
+    0%,
+    100% {
+        transform: translateX(0px)
+    }
+    50% {
+        transform: translateX(-4px)
+    }
+}
+
+@keyframes shift2 {
+    0%,
+    100% {
+        transform: translateX(0px) rotate(180deg)
+    }
+    50% {
+        transform: translateX(-4px) rotate(180deg)
+    }
+}
+
+.selector .circle {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: var(--grey);
+}
+
+.selector p {
+    color: var(--black);
+    margin: 0 24px;
+}
+
+.selector p.active {
+    color: var(--grey);
+}
+
+
+.layout {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    width: 90%;
+    height: 77vh;
+    margin-top: 0;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.layout2 {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    width: 90%;
+    height: 77vh;
+    margin-top: 0;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.leftWrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.drawings {
+    position: relative;
+}
+
+.drawings img {
+    max-height: 60vh;
+    max-width: 100%;
+}
+
+.drawButtons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 24px;
+    margin-bottom: 24px;
+    width: 70%;
+    position: absolute;
+    top: -10%;
+    left: 15%;
+}
+
+.drawB {
+    border: 2px solid var(--grey);
+    padding: 4px;
+    height: 24px;
+    width: auto;
+    color: var(--grey);
+    transition: 0.1s ease-in;
+    display: flex;
+    cursor: pointer;
+    background-color: white;
+}
+
+.activeDrawB,
+.drawB:hover {
+    border: 2px solid var(--blue);
+    padding: 4px;
+    height: 24px;
+    width: auto;
+    color: var(--blue);
+    transition: 0.1s ease-in;
+    display: flex;
+    cursor: pointer;
+    background-color: var(--black);
+}
+
+.drawSoon {
+    border: 2px solid var(--grey);
+    padding: 4px;
+    height: 24px;
+    width: auto;
+    color: var(--grey);
+    transition: 0.1s ease-in;
+    display: flex;
+    cursor: auto;
+    background-color: white;
+}
+
+.canvas {
+    position: absolute;
+    top: 5%;
+    left: 9%;
+    height: 65%;
+    width: 81%;
+    overflow: hidden;
+}
+
+.b4draw {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--blue);
+}
+
+.stage {
+    max-height: 100%;
+    max-width: 100%;
+}
+
+.rightWrapper {
+    margin-left: 5%;
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+
+    -ms-overflow-style: none; 
+    scrollbar-width: none;
+}
+
+.rightWrapper::-webkit-scrollbar {
+    display: none;
+}
+
+.itemHead {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between
+}
+
+.itemHead a {
+    text-decoration: none;
+}
+
+.tank {
+    position: relative;
+    z-index: 0;
+    height: 50vh;
+    width: 55%;
+}
+
+img.fish {
+    position: absolute;
+    height: 28px;
+    width: 49px;
+    left: 0;
+    top: 0;
+}
+  
+.water {
+    border: 4px solid var(--black);
+    background-color: var(--blue);
+    opacity: 0.15;
+    z-index: -1;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.standTop {
+    border: 4px solid var(--black);
+    height: 20px;
+    width: 70%;
+    margin-top: 8px;
+    margin-left: 10px;
+}
+
+.standLegs {
+    width: calc(70% + 8px);
+    margin-top: -4px;
+    margin-left: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.standLeg {
+    border: 4px solid var(--black);
+    width: 20px;
+    height: 6vh;
+}
+

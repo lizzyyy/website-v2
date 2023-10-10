@@ -1,0 +1,167 @@
+@import 'default.module.css';
+
+@font-face {
+    font-family: "Lekton";
+    src: local("Lekton"),
+     url('../static/fonts/Lekton-Bold.woff2') format('woff2'),
+     url('../static/fonts/Lekton-Bold.woff') format('woff'),
+     url("../static/fonts/Lekton-Bold.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+.navBar {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    padding: 1rem 2%;
+    margin-right: 1em;
+    margin-top: 2em;
+    gap: 4em;
+}
+
+.navBarSmallWrapper {
+    display: none;
+}
+
+.item {
+    color: var(--black);
+    font-family: "Lekton";
+    font-weight: normal;
+    font-size: 18px;
+    border: 2px solid transparent;
+    transition: linear 0.1s;
+    line-height: 24px;
+}
+
+.navBar a {
+    text-decoration: none;
+}
+
+.item:hover {
+    border-bottom: 2px solid var(--black);
+}
+
+.active {
+    color: var(--black);
+    font-family: "Lekton";
+    font-weight: normal;
+    font-size: 18px;
+    border: 2px solid transparent;
+    border-bottom: 2px solid var(--black);
+    line-height: 24px;
+}
+
+.footer {
+    position: absolute;
+    bottom: 24px;
+    right: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.footer .footerRow {
+    display: flex;
+    flex-direction: row;
+    margin-top: 4px;
+    gap: 4px;
+}
+
+.footer .footerIcon {
+    border: 2px solid var(--grey);
+    padding: 4px;
+    height: 24px;
+    width: auto;
+    color: var(--grey);
+    background-color: white;
+    transition: 0.1s ease-in;
+    cursor: pointer;
+}
+
+.footer .footerIcon:hover {
+    border: 2px solid var(--black);
+    color: white;
+    background-color: var(--pink);
+    filter: none;
+}
+
+
+
+@media (max-width: 968px) {
+    .item {
+        padding: 4px 0.8em 0 0.8em;
+    }
+
+    .active {
+        padding: 4px 0.8em 0 0.8em;
+    }
+}
+
+@media (max-width: 768px) {
+    .navBar {
+        display: none;
+    }
+
+    .navBarSmallWrapper {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .navBarSmall {
+        margin: 32px -1em 0 -1em;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        padding: 0.85em 5%;
+        background-color: rgba(160, 255, 227, 0.13);
+        border-top: 1px solid var(--blue);
+        border-bottom: 1px solid var(--blue);
+        position: relative;
+    }
+
+    .smallNavButtonOutline {
+        border: 1px solid var(--blue-transparent);
+        padding: 1px;
+        margin-right: 2em;
+    }
+
+    .smallNavButton {
+        border: 1px solid var(--blue);
+        background-color: var(--blue-transparent);
+        width: 2em;
+        height: 2em;
+    }
+
+    .navBarSmall h1 {
+        writing-mode: vertical-lr;
+        cursor: pointer;
+        color: var(--blue);
+        letter-spacing: 0;
+        margin-top: 5px;
+        margin-left: -2px;
+    }
+
+    .logo {
+        height: 4em;
+        width: 4em;
+        top: 0;
+    }
+
+    .navList {
+        border: 1px solid var(--blue);
+        background-color: var(--blue-transparent);
+        margin: 0.5em 2em 0 0;
+        padding: 0.5em;
+        padding-left: 2em;
+        width: fit-content;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        align-self: flex-end;
+    }
+
+    .item {
+        background-color: transparent;
+    }
+}
