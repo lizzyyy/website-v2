@@ -19,6 +19,7 @@
     "@emotion/styled": "^11.11.0",
     "@mui/icons-material": "^5.14.12",
     "@mui/material": "^5.14.12",
+    "animate.css": "^4.1.1",
     "babel-plugin-styled-components": "^2.1.4",
     "canvas": "file:./src/canvas",
     "gatsby": "^5.12.4",

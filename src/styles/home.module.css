@@ -1,4 +1,5 @@
 @import 'default.module.css';
+@import 'animate.css';
 
 @font-face {
     font-family: "Lekton";
@@ -25,6 +26,23 @@
     flex-direction: row;
     align-items: flex-end;
     height: 100%;
+    position: relative;
+}
+
+.plant {
+    position: absolute;
+    top: -80px;
+    right: -5%;
+    max-width: 35%;
+}
+
+.plant img {
+    max-width: 100%;
+}
+
+.plant:hover {
+    animation: swing;
+    animation-duration: 1s;
 }
 
 .lamp {
@@ -154,6 +172,111 @@
 
 .grills:hover {
     padding: 0;
+}
+
+.speakers {
+    position: absolute;
+    bottom: 113px;
+    left: calc(50% - 284px);
+    width: 560px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.speaker,
+.musicOn {
+    width: 60px;
+    height: 100px;
+    outline: 4px solid var(--black);
+    border: 2px solid white;
+    background-color: var(--black);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    position: relative;
+    cursor: pointer;
+}
+
+.speaker .circleTop,
+.musicOn .circleTop {
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    outline: 2px solid var(--white);
+    border: 4px solid var(--black);
+    -webkit-box-shadow:inset 0px 0px 0px 4px white;
+    -moz-box-shadow:inset 0px 0px 0px 4px white;
+    box-shadow:inset 0px 0px 0px 4px white;
+    margin-top: 10px;
+}
+
+.speaker .circleBot,
+.musicOn .circleBot {
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    outline: 2px solid var(--white);
+    border: 4px solid var(--black);
+    -webkit-box-shadow:inset 0px 0px 0px 4px white;
+    -moz-box-shadow:inset 0px 0px 0px 4px white;
+    box-shadow:inset 0px 0px 0px 4px white;
+}
+
+.speaker:hover .circleTop,
+.speaker:hover .circleBot,
+.musicOn .circleTop,
+.musicOn .circleBot {
+    animation: sound 0.2s infinite;
+}
+
+@keyframes sound {
+    0%,
+    100% {
+        transform: scale(1, 1);
+    }
+    50% {
+        transform: scale(1.1, 1.1);
+    }
+}
+
+.music {
+    position: absolute;
+    color: var(--black);
+    width: 40px;
+    height: auto;
+    opacity: 0;
+    transform: opacity ease-in 0.2s;
+}
+
+.musicOn .music:first-of-type {
+    color: var(--pink);
+    opacity: 1;
+    animation: colorShift 2s infinite
+}
+
+.musicOn .music:last-of-type {
+    color: var(--blue);
+    opacity: 1;
+    animation: colorShift 2s infinite
+}
+
+.speaker:hover .music:first-of-type {
+    animation: appear 1s infinite;
+}
+
+.speaker:hover .music:last-of-type {
+    animation: appear 2s infinite;
+}
+
+@keyframes appear {
+    0%,
+    100% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
 }
 
 .tv {

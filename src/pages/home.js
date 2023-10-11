@@ -1,8 +1,10 @@
 import React, { useState, useEffect, useRef, ReactDOM } from "react"
 import { Link } from "gatsby"
-import { Bounce, Fade } from "react-awesome-reveal"
+import { Bounce, Fade, AttentionSeeker } from "react-awesome-reveal"
 import ReactTypingEffect from 'react-typing-effect';
 import * as s from "../styles/home.module.css"
+import MusicNoteIcon from '@mui/icons-material/MusicNote';
+import 'animate.css';
 
 import Nav from "../components/nav";
 import Footer from "../components/footer";
@@ -18,6 +20,7 @@ import playButton from "../images/play.png"
 import arrow from "../images/arrow.png"
 import shelf from "../images/shelf.png"
 import candles from "../images/candles.png"
+import plant from "../images/plant.png"
 
 const HomePage = () => {
 
@@ -28,6 +31,7 @@ const HomePage = () => {
   const [light, setLight] = useState(false);
   const [play, setPlay] = useState(true);
   const [next, setNext] = useState(false);
+  const [music, setMusic] = useState(false);
 
   // useEffect(() => {
   //   setWidth(windRef.current.offsetWidth - 100);
@@ -79,6 +83,7 @@ const HomePage = () => {
 
           {/* lamp + switch */}
           <div className={s.leftWrapper}>
+            <div className={["animate__animated", "animate__swing", s.plant].join(' ')}><img src={plant}/></div>
             <div className={s.lamp}>
               <div className={s.lampShade} />
               <div className={s.lampPole} />
@@ -110,6 +115,20 @@ const HomePage = () => {
             </div>
 
             <div className={s.table}>
+              <div className={s.speakers}>
+                <div className={music ? s.musicOn : s.speaker} onClick={() => setMusic(!music)}>
+                  <div className={s.circleTop} />
+                  <div className={s.circleBot} />
+                  <MusicNoteIcon className={s.music} style={{left: -50, top: -40, transform: "rotate(10deg)"}}/>
+                  <MusicNoteIcon className={s.music} style={{left: -80, top: -60, transform: "rotate(-10deg)"}}/>
+                </div>
+                <div className={music ? s.musicOn : s.speaker} onClick={() => setMusic(!music)}>
+                  <div className={s.circleTop} />
+                  <div className={s.circleBot} />
+                  <MusicNoteIcon className={s.music} style={{right: -50, top: -40, transform: "rotate(-10deg)"}}/>
+                  <MusicNoteIcon className={s.music} style={{right: -90, top: -60, transform: "rotate(10deg)"}}/>
+                </div>
+              </div>
             <div className={s.tv}>
               {
                 play ? 
