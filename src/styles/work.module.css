@@ -59,6 +59,57 @@
     transition: ease-in 5s;
 }
 
+.duckWrapper {
+    display: flex;
+    width: 45%;
+    align-self: flex-start;
+    margin-left: 19%;
+    height: 50px;
+    overflow: hidden;
+    position: relative;
+    transform: translateY(-25vh) rotate(10deg);
+}
+
+.ducks {
+    position: absolute;
+    max-width: 40%;
+    animation: duckMove 15s infinite;
+}
+
+@keyframes duckMove {
+    0% {
+        display: flex;
+        left: -100%;
+        top: 0;
+    }
+    20% {
+        top: 10px;
+        left: 0;
+    }
+    40% {
+        top: 0px;
+    }
+    60% {
+        top: 10px;
+        left: 40%;
+    }
+    80% {
+        top: 0px;
+    }
+    95% {
+        left: 100%;
+        display: none;
+    }
+    100% {
+        display: none;
+    }
+}
+
+.ducks img {
+    width: 20px;
+    height: 20px;
+}
+
 .rightWrapper {
     display: flex;
     flex-direction: column;

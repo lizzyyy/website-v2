@@ -40,11 +40,6 @@
     max-width: 100%;
 }
 
-.plant:hover {
-    animation: swing;
-    animation-duration: 1s;
-}
-
 .lamp {
     height: 90%;
     display: flex;
@@ -426,7 +421,7 @@
 
 .candleWrapper {
     max-width: 15%;
-    margin-bottom: -9.5vh;
+    margin-bottom: -23%;
     margin-right: 20px;
     position: relative;
 }

@@ -20,7 +20,7 @@ import playButton from "../images/play.png"
 import arrow from "../images/arrow.png"
 import shelf from "../images/shelf.png"
 import candles from "../images/candles.png"
-import plant from "../images/plant.png"
+import plantImg from "../images/plant.png"
 
 const HomePage = () => {
 
@@ -32,6 +32,7 @@ const HomePage = () => {
   const [play, setPlay] = useState(true);
   const [next, setNext] = useState(false);
   const [music, setMusic] = useState(false);
+  const [plant, setPlant] = useState(false);
 
   // useEffect(() => {
   //   setWidth(windRef.current.offsetWidth - 100);
@@ -83,7 +84,7 @@ const HomePage = () => {
 
           {/* lamp + switch */}
           <div className={s.leftWrapper}>
-            <div className={["animate__animated", "animate__swing", s.plant].join(' ')}><img src={plant}/></div>
+            <div className={plant ? ["animate__animated", "animate__swing", s.plant].join(' ') : s.plant} onMouseEnter={() => setPlant(true)} onMouseLeave={() => setPlant(false)}><img src={plantImg}/></div>
             <div className={s.lamp}>
               <div className={s.lampShade} />
               <div className={s.lampPole} />

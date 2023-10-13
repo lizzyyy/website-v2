@@ -55,7 +55,15 @@ const WorkPage = () => {
                 <div className={s.sakura} style={{top: "11%", right: "54%"}}><img src={sakura}/></div>
                 <div className={s.sakura} style={{top: "40%", right: "30%"}}><img src={sakura}/></div>
                 <div className={s.sakura} style={{top: "29%", right: "29%"}}><img src={sakura}/></div>
-                {/* <img src={duck}/> */}
+            </div>
+            <div className={s.duckWrapper}>
+              <div className={s.ducks}>
+                <img src={duck} style={{marginTop: 15}}/>
+                <img src={duck} style={{marginTop: 5}}/>
+                <img src={duck} style={{marginTop: 10}}/>
+                <img src={duck}/>
+                <img src={duck} style={{marginTop: 7}}/>
+              </div>
             </div>
           </div>
 
